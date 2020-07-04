@@ -1,16 +1,15 @@
 #include <Stepper.h>
 
-#define STEPS_PER_360_DEGREE 2038
+const int stepsPerRevolution = 200;  
 
-Stepper stepper(STEPS_PER_360_DEGREE, 8, 10, 9, 11); 
+Stepper myStepper(stepsPerRevolution, 8, 9, 10, 11);
 
 void setup() {
+    myStepper.setSpeed(60);
     Serial.begin(9600);
 
-    stepper.setSpeed(16); 
-    
     Serial.println("Step CW 360  Degrees");
-    stepper.step(STEPS_PER_360_DEGREE);
+    myStepper.step(stepsPerRevolution);
     delay(900);
 }
 
