@@ -18,8 +18,9 @@ void setup() {
 
 void loop() {
 
-  myStepper.step(1);
-  sevenSegment.delayNum(stepCount);
+  myStepper.step(stepsPerRevolution);
+  stepCount = stepsPerRevolution;
+  sevenSegment.displayNum(stepCount);
   stepCount++;
   delay(500);
 }
