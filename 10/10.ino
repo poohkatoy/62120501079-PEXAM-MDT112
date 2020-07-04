@@ -5,14 +5,14 @@ int buzzer = 8;
 
 void setup(){
     Serial.begin(9600);
-    
-    pinMode(button, INPUT);
+
+    pinMode(button, INPUT_PULLUP);
     pinMode(buzzer, OUTPUT);
 }
 void loop(){
     buttonState = digitalRead(button);
 
-    if (buttonState == HIGH) {
+    if (buttonState == LOW) {
         tone(buzzer, 800, 800);
     } else {
         noTone(buzzer);
