@@ -11,8 +11,7 @@ void setup() {
 
   sevenSegment.displayStr("0000");
   delay(800);
-
-  sevenSegment.clear();
+  sevenSegment.clearDisplay();
 }
 
 void loop() {
